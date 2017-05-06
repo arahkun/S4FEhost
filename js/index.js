@@ -28,14 +28,14 @@ var FishEgg = function () {
     this.progress = 0;
     this.canvas = canvas;
     // Set position
-    this.x = $(window).width() / 2 + (Math.random() * 300 - Math.random() * 300);
-    this.y = $(window).height() / 2 + (Math.random() * $(window).height() / 4 - Math.random() * $(window).height() / 4);
+    this.x = $(window).width() / 2 + (Math.random() * 1 - Math.random() * 1300);
+    this.y = $(window).height() / 2 + (Math.random() * 1 - Math.random() * 1300);
     // Get viewport size
     this.w = $(window).width();
     this.h = $(window).height();
 
     // Dimension
-    this.radius = 12 + Math.random() * 6;
+    this.radius = 2 + Math.random() * 42;
     // Color
     this.color = "rgba(255,255,255,1)";
     // Setting
@@ -43,20 +43,20 @@ var FishEgg = function () {
       offset1: Math.random() > 0.5 ? 0.5 + Math.random() * 3 : 0.5 + Math.random() * -3,
       offset2: Math.random() > 0.5 ? 0.5 + Math.random() * 3 : 0.5 + Math.random() * -3,
       offset3: Math.random() > 0.5 ? 0.5 + Math.random() * 3 : 0.5 + Math.random() * -3,
-      radius1: 0.5 + Math.random() * 5,
-      radius2: 0.5 + Math.random() * 5,
-      radius3: 0.5 + Math.random() * 5
+      radius1: 0.5 + Math.random() * 42,
+      radius2: 0.5 + Math.random() * 42,
+      radius3: 0.5 + Math.random() * 42
     };
-    this.variantx1 = Math.random() * 100;
-    this.variantx2 = Math.random() * 100;
-    this.varianty1 = Math.random() * 100;
-    this.varianty2 = Math.random() * 100;
+    this.variantx1 = Math.random() * 1000;
+    this.variantx2 = Math.random() * 1000;
+    this.varianty1 = Math.random() * 1000;
+    this.varianty2 = Math.random() * 1000;
   }
 
   FishEgg.prototype.createCircle = function createCircle(x, y, r, c) {
     this.canvas.beginPath();
     this.canvas.fillStyle = c;
-    this.canvas.arc(x, y, r, 0, Math.PI * 2, false);
+    this.canvas.arc(x, y, r, 0, Math.PI * 20, false);
     this.canvas.fill();
     this.canvas.closePath();
   };
@@ -111,23 +111,23 @@ var FishLarva = function () {
     var random = Math.random();
     this.progress = 0;
     this.canvas = canvas;
-    this.speed = 0.5 + random * 1.3;
+    this.speed = 0.3;
 
-    this.x = $(window).width() / 2 + (Math.random() * 200 - Math.random() * 200);
-    this.y = $(window).height() / 2 + (Math.random() * 200 - Math.random() * 200);
+    this.x = $(window).width() + (1300);
+    this.y = $(window).height() + (1300);
 
-    this.s = 0.8 + Math.random() * 0.6;
+    this.s = 0.8;
     this.a = 0;
 
     this.w = $(window).width();
     this.h = $(window).height();
-    this.radius = random * 1.3;
+    this.radius = random * 9.1;
     this.color = "#4ad154";
 
-    this.variantx1 = Math.random() * 1000;
-    this.variantx2 = Math.random() * 1000;
-    this.varianty1 = Math.random() * 1000;
-    this.varianty2 = Math.random() * 1000;
+    this.variantx1 = 1;
+    this.variantx2 = 1;
+    this.varianty1 = 1;
+    this.varianty2 = 1;
   }
 
   FishLarva.prototype.render = function render() {
@@ -169,8 +169,8 @@ var FishLarvaEgg = function () {
     this.canvas = canvas;
     this.speed = 0.5 + random * 0.2;
 
-    this.x = $(window).width() / 2 + (Math.random() * 200 - Math.random() * 200);
-    this.y = $(window).height() / 2 + (Math.random() * 200 - Math.random() * 200);
+    this.x = $(window).width() + 1300;
+    this.y = $(window).height() + 1300;
 
     this.s = Math.random() * 1;
     this.a = 0;
@@ -178,18 +178,18 @@ var FishLarvaEgg = function () {
     this.w = $(window).width();
     this.h = $(window).height();
     this.radius = random * 0.8;
-    this.color = random > 0.8 ? "#82a0c4" : "#2E4765";
+    this.color = random > 0.8 ? "#82a0c4" : "#4ad154";
 
-    this.variantx1 = Math.random() * 100;
-    this.variantx2 = Math.random() * 100;
-    this.varianty1 = Math.random() * 100;
-    this.varianty2 = Math.random() * 100;
+    this.variantx1 = Math.random() * 1;
+    this.variantx2 = Math.random() * 1;
+    this.varianty1 = Math.random() * 1;
+    this.varianty2 = Math.random() * 1;
   }
 
   FishLarvaEgg.prototype.render = function render() {
     this.canvas.beginPath();
     this.canvas.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-    this.canvas.lineWidth = 2;
+    this.canvas.lineWidth = 0.2;
     this.canvas.fillStyle = this.color;
     this.canvas.fill();
     this.canvas.closePath();
@@ -223,8 +223,8 @@ var Paramecium = function () {
     this.progress = 0;
     this.canvas = canvas;
     // Set position
-    this.x = $(window).width() / 2 + (Math.random() * 300 - Math.random() * 300);
-    this.y = $(window).height() / 2 + (Math.random() * $(window).height() / 4 - Math.random() * $(window).height() / 4);
+    this.x = $(window).width() / 2 + (Math.random() * 300 - Math.random() * 420);
+    this.y = $(window).height() / 2 + (Math.random() * $(window).height() / 4 - Math.random() * $(window).height() / 420);
     // Get viewport size
     this.w = $(window).width();
     this.h = $(window).height();
